@@ -1,17 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+//ejemplo con el React DOM
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+//se crea un elemento con el dom usanto jsx
+const elementDom = <h1>Hola en ReactDom!</h1>
+//se crea un nuevo contenedor con el id del html
+const container2 = document.getElementById('root');
+//se renderiza el elemento en el contenedor creado
+ReactDOM.render(elementDom, container2);
