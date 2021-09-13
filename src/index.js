@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ImagenIronman from './assets/images/ironman.png';
-import Card from './components/Card.js';
-
+import Card from './components/card.js';
+import 'bootstrap/dist/css/bootstrap.css'
 //se crea un nuevo contenedor con el id del html
 const container = document.getElementById('root');
 
