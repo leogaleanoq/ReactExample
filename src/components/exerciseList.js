@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from './card';
+import Card from './Card.js';
 //funcion que se encarga de mapear la información de las props y hacer tantos componentes como objetos haya en las props(iterar)
 function ExerciseList(props){
     return(

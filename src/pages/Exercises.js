@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import Wellcome from '../components/welcome.js';
 import ExerciseList from '../components/exerciseList.js';
-import Add from '../components/add.js'
+import Add from '../components/addBtn.js'
 
 class Exercises extends React.Component{
     constructor(props){
