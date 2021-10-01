@@ -1,13 +1,14 @@
 import React from 'react';
 import Card from './Card.js';
 //funcion que se encarga de mapear la información de las props y hacer tantos componentes como objetos haya en las props(iterar)
-function ExerciseList(props){
-    return(
-        <div>
+
+const ExerciseList = ({exercises}) =>(
+    <div>
             {
-                props.excercisesprops.map((exercise) => {
+                exercises.map((exercise) => {
                     return(
                         <Card 
+                            key={exercise.id}
                             title={exercise.title}
                             description={exercise.description}
                             img = {exercise.img}
@@ -18,7 +19,8 @@ function ExerciseList(props){
                 })
             }
         </div>
-    );
-};
+);
+
+
 
 export default ExerciseList;
