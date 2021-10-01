@@ -1,8 +1,18 @@
 import React from 'react';
 
 class ExercisesNew extends React.Component{
+
+
+clickHandler = () => {
+    console.log('Enviado!');
+};
+
     render(){
-        return 'ExercisesNew'
+        return(
+            <button onClick={this.clickHandler}>
+                Enviar
+            </button>
+        );
     };
 };
 
