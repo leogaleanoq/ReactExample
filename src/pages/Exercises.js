@@ -1,7 +1,9 @@
 import React from 'react';
 import Wellcome from '../components/welcome.js';
 import ExerciseList from '../components/exerciseList.js';
-import Add from '../components/addBtn.js'
+import Loading from '../components/loading.js';
+import Add from '../components/addBtn.js';
+import Error500 from '../pages/Error500.js';
 
 //usamos property initializers, es un feature de babel que permite no inicializar las props en el constructor
 
@@ -9,7 +11,9 @@ class Exercises extends React.Component{
     //en los estados, se crea el objeto array data con 3 objetos
     state = {
         //es la data con la información de las cards
-        data: []
+        data: [],
+        loading: true,
+        error: null
     };
 
     async componentDidMount(){
@@ -17,12 +21,27 @@ class Exercises extends React.Component{
     };
 
     fetchExercises = async() =>{
-        let res = await fetch('http://localhost:8000/api/exercises');
-        let data = await res.json();
-        this.setState({data});
-        console.log(data);
+        try{
+
+            let res = await fetch('http://localhost:8000/api/exercises');
+            let data = await res.json();
+            this.setState({data, loading:false});
+            console.log(data);
+
+        }catch(error){
+            this.setState({
+                loading:false,
+                error
+            });
+        }
     }
     render(){
+        if(this.state.loading){
+            return <Loading/>;
+        };
+        if(this.state.error){
+            return <Error500/>;
+        };
         return(
             <div>
                 <Wellcome
