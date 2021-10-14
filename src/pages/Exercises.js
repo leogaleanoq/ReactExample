@@ -43,7 +43,8 @@ class Exercises extends React.Component{
             return <Error500/>;
         };
         return(
-            <div>
+            //se cambian los divs por la propiedad fragmentos de react
+            <React.Fragment>
                 <Wellcome
                     username="Leo"
                 />
@@ -52,7 +53,7 @@ class Exercises extends React.Component{
                     exercises={this.state.data}
                 />
                 <Add/>
-            </div>
+            </React.Fragment>
         )
     }
 };
