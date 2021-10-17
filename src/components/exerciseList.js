@@ -2,26 +2,19 @@ import React from 'react';
 import Card from './Card.js';
 //funcion que se encarga de mapear la información de las props y hacer tantos componentes como objetos haya en las props(iterar)
 
-const ExerciseList = ({exercises}) =>{
-    return(
-    <div>
+const ExerciseList = ({exercises}) =>(
+    <React.Fragment>
             {
                 exercises.map((exercise) => (
                         <Card 
                             key={exercise.id}
-                            title={exercise.title}
-                            description={exercise.description}
-                            img = {exercise.img}
-                            rightColor={exercise.leftColor}
-                            leftColor={exercise.rightColor}
+                            //significa que se le aplican todas las propiedades del objeto exercise
+                            {...exercise}
                         />
                     )
                 )
             };
-    </div>
-    );
-};
-
-
+    </React.Fragment>
+);
 
 export default ExerciseList;
