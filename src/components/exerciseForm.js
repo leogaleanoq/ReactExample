@@ -1,10 +1,7 @@
 import React from 'react'
-class ExerciseForm extends React.Component {
-    
-    render(){
-        const { onChange, onSubmit, form } = this.props
-        return (
-            <div className="container">
+
+const ExerciseForm = ({ onChange, onSubmit, form }) =>(
+<div className="container">
             <form 
                 onSubmit={onSubmit}
             >
@@ -69,7 +66,6 @@ class ExerciseForm extends React.Component {
                 </button>
             </form>
         </div>
-        )
-    }
-}
+);
+
 export default ExerciseForm

@@ -4,11 +4,8 @@ import circlesimg from '../assets/images/circles.png';
 import 'bootstrap/dist/css/bootstrap.css';
 import emptyImg from '../assets/images/empty.png';
 
-class Card extends React.Component{
-    render(){
-        const { title, description, img, leftColor, rightColor} = this.props
-        return (
-            <div className="card mx-auto Fitness-Card mt-2"
+const Card = ({title, description, img, leftColor, rightColor}) =>(
+    <div className="card mx-auto Fitness-Card mt-2"
             style={{
                 backgroundImage:`url(${circlesimg}), linear-gradient(to right, ${leftColor || '#56CCF2'}, ${rightColor || '#2F80ED'})`
             }}>
@@ -25,9 +22,7 @@ class Card extends React.Component{
                     </div>
                 </div>
             </div>
-            
-        )
-    }
-};
+);
+
 
 export default Card;
